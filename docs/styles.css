@@ -231,7 +231,7 @@ select:focus {
   align-items: end;
   padding: 10px 12px;
   border-left: 4px solid var(--red);
-  background: linear-gradient(90deg, rgba(200, 16, 46, 0.08), #ffffff 26%);
+  background: linear-gradient(90deg, rgba(200, 16, 46, 0.08), #ffffff 76%);
 }
 
 .field {
