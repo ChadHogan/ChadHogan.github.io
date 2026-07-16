@@ -161,7 +161,7 @@ function hydrateWeightsFromUrl() {
   const values = raw.split(",").map((value) => Number.parseFloat(value));
   const valid =
     values.length === METRICS.length &&
-    values.every((value) => Number.isFinite(value) && value >= 0 && value <= 20);
+    values.every((value) => Number.isFinite(value) && value >= 0 && value <= 10);
 
   if (!valid) {
     return;
@@ -248,7 +248,7 @@ function renderWeights() {
             id="weight-${metric.key}"
             type="range"
             min="0"
-            max="20"
+            max="10"
             step="0.5"
             value="${value}"
             data-weight="${metric.key}"
@@ -256,7 +256,7 @@ function renderWeights() {
           <input
             type="number"
             min="0"
-            max="20"
+            max="10"
             step="0.5"
             value="${value}"
             aria-label="${escapeHtml(metric.label)} weight"
@@ -274,7 +274,7 @@ function updateWeightControls(key, value) {
   const label = document.querySelector(`#label-${key}`);
   const range = document.querySelector(`[data-weight="${key}"]`);
   const input = document.querySelector(`[data-weight-number="${key}"]`);
-  const safeValue = Math.max(0, Math.min(20, number(value)));
+  const safeValue = Math.max(0, Math.min(10, number(value)));
 
   state.weights[key] = safeValue;
   label.textContent = safeValue;
