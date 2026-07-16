@@ -4,13 +4,13 @@ const METRICS = [
   {
     key: "player_appearances",
     label: "Appearances",
-    defaultWeight: 8,
+    defaultWeight: 6,
     color: "#c8102e",
   },
   {
     key: "length_of_service",
     label: "Service",
-    defaultWeight: 8,
+    defaultWeight: 0,
     color: "#2868a8",
   },
   {
@@ -22,7 +22,7 @@ const METRICS = [
   {
     key: "goal_assists_total",
     label: "Goals + assists",
-    defaultWeight: 5,
+    defaultWeight: 10,
     color: "#00875a",
   },
   {
@@ -34,13 +34,13 @@ const METRICS = [
   {
     key: "consecutive_games",
     label: "Consecutive games",
-    defaultWeight: 3,
+    defaultWeight: 0,
     color: "#5b6f95",
   },
   {
     key: "starter_ratio",
     label: "Starter ratio",
-    defaultWeight: 4,
+    defaultWeight: 1.5,
     color: "#7b5837",
   },
 ];
