@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liverpool Player Ranking Dashboard</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Liverpool FC ranking model</p>
+        <h1>Player Scores</h1>
+      </div>
+      <div class="summary-grid" id="summaryStats" aria-live="polite"></div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel" aria-labelledby="weightsTitle">
+        <div class="panel-header">
+          <div>
+            <h2 id="weightsTitle">Weightings</h2>
+            <p class="meta" id="weightTotal">Total weight: 42</p>
+          </div>
+          <div class="button-row">
+            <button type="button" id="resetWeights">Reset</button>
+            <button type="button" id="copyLink">Copy Link</button>
+          </div>
+        </div>
+
+        <div class="weight-grid" id="weightControls"></div>
+        <p class="status" id="shareStatus" aria-live="polite"></p>
+      </section>
+
+      <section class="filter-bar" aria-label="Table controls">
+        <label class="field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Player name" autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Era</span>
+          <select id="eraSelect">
+            <option value="">All eras</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Rows</span>
+          <select id="rowLimit">
+            <option value="25">Top 25</option>
+            <option value="50">Top 50</option>
+            <option value="100" selected>Top 100</option>
+            <option value="all">All</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="table-shell" aria-labelledby="rankingTitle">
+        <div class="table-header">
+          <h2 id="rankingTitle">Ranking</h2>
+          <p class="meta" id="resultMeta"></p>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Move</th>
+                <th scope="col">Player</th>
+                <th scope="col">Score</th>
+                <th scope="col">Breakdown</th>
+                <th scope="col">Apps</th>
+                <th scope="col">Service</th>
+                <th scope="col">Trophies</th>
+                <th scope="col">G+A</th>
+                <th scope="col">Captain</th>
+                <th scope="col">Starter</th>
+              </tr>
+            </thead>
+            <tbody id="scoreRows">
+              <tr>
+                <td colspan="11" class="empty-state">Loading scores...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
